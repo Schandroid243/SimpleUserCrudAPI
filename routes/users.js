@@ -40,8 +40,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try{
-        const user = await User.updateOne({
-            _id: req.params.id,
+        const user = await User.updateOne({_id: req.params.id,},{
             $set: {
                 name: req.body.name,
                 username: req.body.username,

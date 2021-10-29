@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/users');
+const articleRouter = require('./routes/articles');
 const cors = require('cors');
 require('dotenv/config');
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({
 }))
 
 app.use('/users', userRoute);
+app.use('/articles', articleRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello this my user server !');
